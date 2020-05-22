@@ -55,5 +55,10 @@ const flightSchema = new Schema({
   }
 });
   
+// To delete
+function deleteOne(id) {
+    const idx = flights.findIndex(flight => flight.id === id);
+    flight.splice(idx, 1);
+}
 
 module.exports = mongoose.model('Flight', flightSchema);

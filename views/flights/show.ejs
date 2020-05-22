@@ -47,14 +47,22 @@
         <th>Date</th>
         <th>Review</th>
         <th>Rating</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
       <% flight.reviews.forEach(function(r) { %>
         <tr>
-          <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.content %></td>
-          <td><%= r.rating %></td>
+        <td><%= r.createdAt.toLocaleDateString() %></td>
+        <td><%= r.content %></td>
+        <td><%= r.rating %></td>
+        <td>
+            <form action="/flights/<%= f.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                    <button type="submit">X</button>
+            </form>
+        </td>
+
         </tr>
       <% }); %>
     </tbody>

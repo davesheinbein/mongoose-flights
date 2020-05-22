@@ -1,7 +1,8 @@
 const Flight = require('../models/flight');
 
 module.exports = {
-    create
+    create,
+    // deleteReview
 };
 
 function create(req, res) {
@@ -17,3 +18,10 @@ function create(req, res) {
         });
     });
 }
+
+// function deleteReview(req, res) {
+//     // The model is responsible for deleting the todo
+//     Flight.deleteOne({'_id' : req.params.id}, function(err, deleteR){
+//         res.redirect('/flights');
+//     });
+// }
