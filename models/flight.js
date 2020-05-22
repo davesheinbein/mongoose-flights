@@ -17,10 +17,7 @@ const destinationSchema = new Schema({
     },
     arrival: {
         type: Date,
-        default: function() {
-        return new Date().getFullYear();
-      }, 
-      min: 2020
+        default: 'n/a'
     }
 });
 

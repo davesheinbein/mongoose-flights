@@ -18,6 +18,24 @@ function create(req, res) {
     res.redirect('/flights');
 }
 
+// Test 
+// function create(req, res) {
+//   Flight.create(req.body);
+//   flight.save(function(err) {
+//     if (err) return res.render('flights');
+//     res.redirect('/flights');;
+// }
+
+// Ryan shared but doesn't work how i want it to
+// function create(req,res) {
+//     req.body.flightNo = req.body.flightNo.replace(/\s*,\s*/g);
+//     const flight = new Flight(req.body);
+//     flight.save(function(err) {
+//         if (err) return res.render('flights');
+//         res.redirect('/flights');
+//     });
+// };
+
 function newFlight(req, res) {
   res.render('flights/new');
 }
