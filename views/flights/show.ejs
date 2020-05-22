@@ -9,7 +9,7 @@
     <div>Flight Number: </div>
     <div><%= flight.flightNo %></div>
     <div>Departs: </div>
-    <div><%= flight.departs %></div>
+    <div><%= flight.departs.toLocaleDateString() %></div>
 </section>
 
     <h2>Arrivals</h2>
@@ -17,13 +17,14 @@
     <div>Airport: </div>
     <div><%= flight.airport %></div>
     <div>Arrivals Date: </div>
-    <div><%= flight.arrival %></div>
+    <div><%= flight.arrival %></div> <!-- add after arrivals once figure out arrivals .toLocaleDateString() -->
   </section>
 
 
 <!-- new markup below --> 
 <!-- Embedded subdoc info for view --> 
-<br><br><h2>Reviews</h2>
+<br>
+<h2>Reviews</h2>
 <form id="add-review-form" method="POST"
   action="/flights/<%= flight._id %>/reviews">
   <label>Review:</label>

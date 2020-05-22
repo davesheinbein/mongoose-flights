@@ -18,6 +18,10 @@ function create(req, res) {
     res.redirect('/flights');
 }
 
+// New time edited
+// function create(req, res) {
+//     req.body.departs.
+
 // Test 
 // function create(req, res) {
 //   Flight.create(req.body);
