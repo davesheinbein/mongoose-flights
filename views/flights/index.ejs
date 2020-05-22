@@ -8,11 +8,14 @@
   <title>Mongoose Flights</title>
 </head>
 <body>
-    <a href="/">Home</a> 
-    || 
-    <a href="/flights/new">New Flight</a> 
-    || 
-    <a href="/flights">All Flights</a>
+    <nav>
+        <img src="/images/camera.svg">
+        <a href="/">Home</a> 
+        || 
+        <a href="/flights/new">New Flight</a> 
+        || 
+        <a href="/flights">All Flights</a>
+    </nav>
     <h1>Flight List</h1>
     <table>
         <thead>
@@ -31,6 +34,7 @@
             <td><%= f.airport %></td>
             <td><%= f.flightNo %></td>
             <td><%= f.departs %></td>
+            <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
             </tr>
         <!-- Close the forEach using EJS here -->
         <% }); %>
