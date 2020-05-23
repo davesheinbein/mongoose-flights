@@ -4,7 +4,5 @@ const reviewsCtrl = require('../controllers/reviews');
 
 router.post('/flights/:id/reviews', reviewsCtrl.create);
 
-// router.delete('/:id', reviewsCtrl.deleteReview);
-
 
 module.exports = router;

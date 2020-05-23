@@ -57,7 +57,7 @@
         <td><%= r.content %></td>
         <td><%= r.rating %></td>
         <td>
-            <form action="/flights/<%= f.id %>?_method=DELETE"
+            <form action="/flights/<%= r.id %>?_method=DELETE"
                 class="delete-form" method="POST">
                     <button type="submit">X</button>
             </form>
