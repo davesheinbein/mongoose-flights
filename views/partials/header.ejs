@@ -8,14 +8,17 @@
   <title>Mongoose Flights</title>
 </head>
 <body>
-  <nav>
-    <img src="/images/camera.svg" alt="Camera"/>
-    <a href="/"><%- title === 'Home' ? 'class="active"' : '' %>Home</a> 
-    ||
-    <a href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>>Add Flight</a>
-    ||
-    <a href="/flights" <%- title === 'All Flights' ? 'class="active"' : '' %>>All Flights</a>
-  </nav>
+    <nav>
+        <header>
+            <a href="/" class="airplane"><img src="/images/airplane.svg" alt="airplane"/></a>
+            <h1><%= title %></h1>
+        </header>
+        <a href="/">Home</a> 
+        || 
+        <a href="/flights/new">New Flight</a> 
+        || 
+        <a href="/flights">All Flights</a>
+    </nav>
   <main>
     <h1><%= title %></h1>
     

@@ -8,24 +8,27 @@
 </head>
 <body>
     <nav>
-        <img src="/images/camera.svg" alt="Camera"/>
+        <header>
+            <a href="/" class="airplane"><img src="/images/airplane.svg" alt="airplane"/></a>
+            <h1>Enter a New Flight</h1>
+        </header>
         <a href="/">Home</a> 
         || 
         <a href="/flights/new">New Flight</a> 
         || 
         <a href="/flights">All Flights</a>
     </nav>
-    <section>
-        <h2>Enter a New Flight</h2>
+    <section id="inputForm">
+        <h2 class="titles">Enter a New Flight</h2>
         <form action="/flights" method="POST">
-            <label>Airline:
+            <labe class="newLabels">Airline:
                 <select name="airline">
                     <option value="American">American</option>
                     <option value="Southwest">Southwest</option>
                     <option value="United">United</option>
                 </select>
             </label><br>
-            <label>Airport:
+            <label class="newLabels">Airport:
                 <select name="airport">
                     <option value="AUS">AUS</option>
                     <option value="DFW">DFW</option>
@@ -34,10 +37,10 @@
                     <option value="SAN">SAN</option>
                 </select>
             </label><br>
-            <label>Flight Number:
+            <label class="newLabels">Flight Number:
                 <input type="text" name="flightNo">
             </label><br>
-            <label>Departs:
+            <label class="newLabels">Departs:
             <input type="datetime-local" name="departs" value="2021-01-01T00:00" min="2021-01-01T00:00">
             </label><br>
             <input type="submit" value="Add Flight">

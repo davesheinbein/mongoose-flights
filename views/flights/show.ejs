@@ -1,30 +1,30 @@
 <%- include('../partials/header') %>
 
-    <h2>Departures</h2>
+    <h2 class="titles">Departures</h2>
 <section id="show-page">
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departs: </div>
-    <div><%= flight.departs.toLocaleDateString() %></div>
+    <div class="infoBar">Airline: </div>
+    <div class="infoDisplay"><%= flight.airline %></div>
+    <div class="infoBar">Airport: </div>
+    <div class="infoDisplay"><%= flight.airport %></div>
+    <div class="infoBar">Flight Number: </div>
+    <div class="infoDisplay"><%= flight.flightNo %></div>
+    <div class="infoBar">Departs: </div>
+    <div class="infoDisplay"><%= flight.departs.toLocaleDateString() %></div>
 </section>
 
-    <h2>Arrivals</h2>
+    <h2 class="titles">Arrivals</h2>
 <section id="show-page">
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-    <div>Arrivals Date: </div>
-    <div><%= flight.arrival %></div> <!-- add after arrivals once figure out arrivals .toLocaleDateString() -->
+    <div class="infoBar">Airport: </div>
+    <div class="infoDisplay"><%= flight.airport %></div>
+    <div class="infoBar">Arrivals Date: </div>
+    <div class="infoDisplay"><%= flight.arrival %></div> <!-- add after arrivals once figure out arrivals .toLocaleDateString() -->
   </section>
 
 
 <!-- new markup below --> 
 <!-- Embedded subdoc info for view --> 
 <br>
-<h2>Reviews</h2>
+<h2 class="titles">Reviews</h2>
 <form id="add-review-form" method="POST"
   action="/flights/<%= flight._id %>/reviews">
   <label>Review:</label>
@@ -37,29 +37,29 @@
     <option value="4">4</option>
     <option value="5">5</option>
   </select>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Add Review" class="addReview">
 </form>
 <!-- Checks if flight has somthing in it vvv -->
 <% if (flight.reviews.length) { %>
   <table>
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-        <th>Delete</th>
+        <th class="infoBar">Date</th>
+        <th class="infoBar">Review</th>
+        <th class="infoBar">Rating</th>
+        <th class="infoBar">Delete</th>
       </tr>
     </thead>
     <tbody>
       <% flight.reviews.forEach(function(r) { %>
         <tr>
-        <td><%= r.createdAt.toLocaleDateString() %></td>
-        <td><%= r.content %></td>
-        <td><%= r.rating %></td>
+        <td class="dates"><%= r.createdAt.toLocaleDateString() %></td>
+        <td class="reviews"><%= r.content %></td>
+        <td class="ratings"><%= r.rating %></td>
         <td>
-            <form action="/flights/<%= r.id %>?_method=DELETE"
+            <form action="/reviews/<%= r._id %>?_method=DELETE"
                 class="delete-form" method="POST">
-                    <button type="submit">X</button>
+                    <button class="deleBtn" type="submit">X</button>
             </form>
         </td>
 

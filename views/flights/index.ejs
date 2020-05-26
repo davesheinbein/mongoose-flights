@@ -9,23 +9,25 @@
 </head>
 <body>
     <nav>
-        <img src="/images/camera.svg" alt="Camera"/>
+        <header>
+            <a href="/" class="airplane"><img src="/images/airplane.svg" alt="airplane"/></a>
+            <h1>Flight List</h1>
+        </header>
         <a href="/">Home</a> 
         || 
         <a href="/flights/new">New Flight</a> 
         || 
         <a href="/flights">All Flights</a>
     </nav>
-    <h1>Flight List</h1>
     <table>
         <thead>
             <tr>
-                <th> Delete </th>  <!-- Add for delete -->
-                <th> Airline </th>
-                <th> Airport </th>
-                <th> Flight Number </th>
-                <th> Departure Date </th>
-                <th> More Info </th>
+                <th class="infoBar"> Delete </th>  <!-- Add for delete -->
+                <th class="infoBar"> Airline </th>
+                <th class="infoBar"> Airport </th>
+                <th class="infoBar"> Flight Number </th>
+                <th class="infoBar"> Departure Date </th>
+                <th class="infoBar"> More Info </th>
             </tr>
         </thead>
         <tbody>
@@ -34,17 +36,17 @@
             <tr>
                 <!-- Delete just added -->
                 <td>
-                    <form action="/flights/<%= f.id %>?_method=DELETE"
+                    <form action="/flights/<%= f._id %>?_method=DELETE"
                     class="delete-form" method="POST">
-                        <button type="submit">X</button>
+                        <button class="deleBtn" type="submit">X</button>
                     </form>
                 </td>
                 <!-- ^^^^^^^^^^^^^^^^^^^^ -->
-                <td><%= f.airline %></td>
-                <td><%= f.airport %></td>
-                <td><%= f.flightNo %></td>
-                <td><%= f.departs %></td>
-                <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
+                <td class="airlineCss"><%= f.airline %></td>
+                <td class="airportCss"><%= f.airport %></td>
+                <td class="flightNo"><%= f.flightNo %></td>
+                <td class="dates"><%= f.departs.toLocaleDateString() %></td>
+                <td><a class="detailsCss" href="/flights/<%= f._id %>">DETAILS</a></td>
             </tr>
         <!-- Close the forEach using EJS here -->
         <% }); %>

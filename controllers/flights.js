@@ -6,7 +6,6 @@ module.exports = {
   index,
   show,
   deleteFlight
-//   deleteReview 
 };
 
 function index(req, res) {
@@ -32,7 +31,6 @@ function show(req, res) {
 
 // To delete
 function deleteFlight(req, res) {
-    // The model is responsible for deleting the todo
     Flight.deleteOne({'_id' : req.params.id}, function(err, deleteF){
         res.redirect('/flights');
     });
