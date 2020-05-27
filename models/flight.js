@@ -52,8 +52,7 @@ const flightSchema = new Schema({
   },
   destinations: {
       type: [destinationSchema]
-  }
+  },
 });
   
-
-module.exports = mongoose.model('Flight', flightSchema);
+module.exports = mongoose.model('Flights', flightSchema);

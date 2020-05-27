@@ -23,12 +23,6 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
-/* nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
-} */
-
 nav > header {
   display: flex;
   margin-right: auto;
@@ -68,7 +62,6 @@ nav > a {
   padding: 10px;
   border-radius: 5px;
 }
-
 
 nav > a:hover {
   color: white;
@@ -138,7 +131,17 @@ table td {
 }
 
 .infoDisplay {
-  color: orange;
+  color: teal;
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  color: green;
 }
 
 textarea {

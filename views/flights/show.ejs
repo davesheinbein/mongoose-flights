@@ -10,7 +10,19 @@
     <div class="infoDisplay"><%= flight.flightNo %></div>
     <div class="infoBar">Departs: </div>
     <div class="infoDisplay"><%= flight.departs.toLocaleDateString() %></div>
-</section>
+    <!-- new -->
+    <div class="infoBar">Tickets:</div>  <!-- new -->
+    <ul>
+      <%- tickets.map(t => 
+        `<li> Seat ${t.seat} $ ${t.price}</li>`
+      ).join('') %>
+    </ul>
+    <!-- ^^^^^ -->
+  </section>
+
+  <!-- New -->
+  <a href="/flights/<%= flight._id %>/tickets/new"><button>Add New Ticket</button></a>
+  <!-- ^^^^ -->
 
     <h2 class="titles">Arrivals</h2>
 <section id="show-page">
